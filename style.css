@@ -1,0 +1,34 @@
+body {
+    background-color: #000249;
+    color: beige;
+}
+
+svg {
+    cursor: pointer;
+}
+
+#buble1, #buble1_2, #buble1_3, #buble1_4, #buble1_5,  #buble1_6,  #buble1_7,  #buble1_8,
+#buble1_9, #buble1_10, #buble1_11, #buble1_12, #buble1_13, #buble1_14,
+#buble1_15, #buble1_16, #buble1_17, #buble1_18, #buble1_19, #buble1_20, #buble1_21, #buble1_22,
+#buble1_22, #buble1_23, #buble1_24, #buble1_25, #buble1_26, #buble1_27,
+#buble1_28, #buble1_29, #buble1_30, #buble1_31, #buble1_32, #buble1_33 {
+    opacity: 0;
+    animation: moving 1s forwards;  
+}
+
+@keyframes moving {
+    from {
+        opacity: 0;
+        transform: translateY(1.1)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.form {
+    display: grid;
+    gap: 5px;
+}
