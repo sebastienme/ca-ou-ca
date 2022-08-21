@@ -28,7 +28,26 @@ svg {
     }
 }
 
+.main {
+    height: 200px;
+    display: flex;
+    gap: 25px
+}
+
 .form {
     display: grid;
-    gap: 5px;
+    gap: 5px;    
+}
+
+.comparison {
+    border: 2px solid white;
+    height: 50px;
+    width: 200px;
+}
+
+.user-choice {
+    border: 2px solid white;
+    height: 50px;
+    width: 200px;
+    color: black;
 }
