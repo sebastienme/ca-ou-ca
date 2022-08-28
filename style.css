@@ -415,4 +415,9 @@ footer {
     .step-1 {
         margin-top: 80px;
     }
+
+    .winner {
+        font-size: 25px;
+        text-align: center;
+    }
 }
