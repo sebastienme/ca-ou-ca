@@ -325,6 +325,7 @@ footer {
     padding: 16px;
     margin-top: 30px;
     display: flex;
+    justify-content: flex-end;
 }
 
 .footer {
@@ -336,4 +337,82 @@ footer {
     0 0 17px #fce483;
     border-radius: 5px;
     padding: 16px;
+}
+
+@media only screen and (max-width: 660px) {
+    
+    body {
+        margin: 8px;
+    }
+
+    h1 {
+        font-size: 4.2rem;
+    }
+
+    .explication {
+        margin-top: 60px;
+    }
+
+    .btn-instructions {
+        margin: 0;
+        width: 130px;
+        align-self: center;
+    }
+
+    .instructions {
+        display: block;
+        font-size: 14px;
+        padding-left: 15px;
+    }
+
+    .section-instructions {
+        margin-right: 0;
+        margin-left: 0;
+        gap: 20px;
+        margin-top: 80px;
+    }
+
+    .input-btn {
+        font-size: 25px;
+        max-width: 300px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        max-width: 350px;
+    }
+
+    .input {
+        font-size: 25px;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    footer {
+        justify-content: center;
+        margin-top: 100px;
+    }
+
+    .footer {
+        font-size: 10px;
+    }
+
+    .user-choice {
+        font-size: 35px;
+    }
+
+    .refresh {
+        max-width: 300px;
+    }
+
+    .span-winner {
+        text-align: center;
+    }
+
+    .step-1 {
+        margin-top: 80px;
+    }
 }
