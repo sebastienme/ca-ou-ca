@@ -9,18 +9,48 @@ instructionsBtn.addEventListener('click', () => {
     toRoll.style.maxHeight = "300px";
 })
 
-//function that get input (integer) from the user
-const inputButton = document.querySelector('.input-btn');
-let inputNumber;
-inputButton.addEventListener('click', function() {
-    do {
-        inputNumber = prompt("Entrez le nombre de choix que vous avez?", "Nombre impair seulement")
-    } while (inputNumber % 2 != 0)
-    if (inputNumber != null) {
-        createsInputLabels(inputNumber)
-    }
-    inputButton.style.display = 'none';    
+//funtion to start the game
+const qtyButton = document.querySelector('.qty-btn')
+const section = document.querySelector('.step-1') 
+qtyButton.addEventListener('click', function() {
+    let input = document.createElement('input')
+    let form = document.createElement('form')
+    let label = document.createElement('label')
+    let submit = document.createElement('button')
+    qtyButton.style.display = "none";
+    section.appendChild(form)
+    form.setAttribute('class', 'names-qty')
+    form.setAttribute('action', 'index.html')
+    form.setAttribute('method', 'post')
+    form.appendChild(label)
+    label.setAttribute('for', 'names-qty')
+    label.innerHTML = 'Combien de noms as-tu?';
+    form.appendChild(input)
+    input.setAttribute('type', 'number')
+    input.setAttribute('id', 'names-qty')
+    input.setAttribute('value', '')
+    input.setAttribute('min', '2')
+    input.setAttribute('max', '100')
+    input.setAttribute('required', '')
+    section.appendChild(submit)
+    submit.setAttribute('type', 'button')
+    submit.setAttribute('name', 'button')
+    submit.setAttribute('onclick', 'getInputValue();')
+    submit.setAttribute('class', 'input-btn')
+    submit.innerHTML = 'Soumettre'
 })
+
+//function that get input (integer) from the user
+
+function getInputValue(){
+    // Selecting the input element and get its value 
+    const form = document.querySelector('.names-qty')
+    const btn = document.querySelector('.input-btn')
+    let inputVal = document.getElementById("names-qty").value;
+    createsInputLabels(inputVal)   
+    form.style.display = 'none';
+    btn.style.display = 'none';
+}
 
 //function that creates the labels from the form
 const inputLabels = document.querySelector('.input-labels')
@@ -31,6 +61,7 @@ function createsForm(){
     input.setAttribute('type', 'text')
     input.setAttribute('name', 'array[]')
     input.setAttribute('value', '')
+    input.setAttribute('required', '')
 };
 
 //function that creates the form
