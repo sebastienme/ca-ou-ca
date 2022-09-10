@@ -32,12 +32,14 @@ qtyButton.addEventListener('click', function() {
     input.setAttribute('min', '2')
     input.setAttribute('max', '100')
     input.setAttribute('required', '')
+    input.setAttribute('onkeypress', 'return event.keyCode != 13;')
     section.appendChild(submit)
     submit.setAttribute('type', 'button')
     submit.setAttribute('name', 'button')
     submit.setAttribute('onclick', 'getInputValue();')
     submit.setAttribute('class', 'input-btn')
     submit.innerHTML = 'Soumettre'
+    
 })
 
 //function that get input (integer) from the user
@@ -47,9 +49,14 @@ function getInputValue(){
     const form = document.querySelector('.names-qty')
     const btn = document.querySelector('.input-btn')
     let inputVal = document.getElementById("names-qty").value;
-    createsInputLabels(inputVal)   
-    form.style.display = 'none';
-    btn.style.display = 'none';
+    if (inputVal >= 2) {
+        createsInputLabels(inputVal)   
+        form.style.display = 'none';
+        btn.style.display = 'none';
+    } else {
+        window.location.reload();
+    }
+
 }
 
 //function that creates the labels from the form
